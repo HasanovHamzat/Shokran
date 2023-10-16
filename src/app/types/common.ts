@@ -1,6 +1,7 @@
-import { reducers } from "../store/reducers";
+import { rootReducer } from "../store/reducers/rootReducer";
 
-export type RootStateType = ReturnType<typeof reducers>;
+
+export type RootStateType = ReturnType<typeof rootReducer>;
 export interface IInputProps {
   name: string;
   url?: string;

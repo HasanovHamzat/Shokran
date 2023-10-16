@@ -11,3 +11,54 @@
     width: 100%;
     padding: 20px 24px;
 }
+
+
+.card_title{
+    color: var(--Black, #222122);
+    font-feature-settings: 'clig' off, 'liga' off;
+    
+    /* Body 15/Regular */
+    font-family: Rubik;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+}
+
+
+.card_subtitle{
+    color: var(--grey-500, #C1C3C3);
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Rubik;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 16.8px */
+}
+.card_items{
+    margin-bottom: 8px;
+
+}
+.details {
+    color: var(--grey-700, #838687);
+text-align: right;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* Button/Extra Small */
+font-family: Rubik;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 15px; /* 125% */
+}
+
+.amount {
+    color: var(--grey-800, #4E4D4E);
+font-feature-settings: 'clig' off, 'liga' off;
+/* Subtitle 2/Regular */
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%;
+}

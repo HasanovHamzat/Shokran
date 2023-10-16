@@ -1,0 +1,11 @@
+<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ion:card-outline" clip-path="url(#clip0_24_48390)">
+<path id="Vector" d="M1.5 2.84164L1.5 13.1584C1.5 14.208 2.36185 15.0588 3.425 15.0588L10.575 15.0588C11.6381 15.0588 12.5 14.208 12.5 13.1584L12.5 2.84164C12.5 1.79205 11.6381 0.941189 10.575 0.941189L3.425 0.94119C2.36185 0.94119 1.5 1.79205 1.5 2.84164Z" stroke="#222122" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M5.5 15.0588L5.5 0.94119" stroke="#222122" stroke-width="2" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_24_48390">
+<rect width="16" height="13" fill="white" transform="translate(0.5 16) rotate(-90)"/>
+</clipPath>
+</defs>
+</svg>
