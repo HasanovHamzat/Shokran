@@ -1,115 +1,79 @@
-
-import { FormInput } from "../../../shared/ui/form/FormInput"
-import { FormCheckbox } from "../../../shared/ui/form/FormCheckbox"
-import  "./CardCreate.scss"
-// import { useDispatch, useSelector } from "react-redux";
+import { FormInput } from "../../../shared/ui/form/FormInput";
+import { FormCheckbox } from "../../../shared/ui/form/FormCheckbox";
+import "./CardCreate.scss";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-
-import {  FormProvider, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { FormProvider, useForm } from "react-hook-form";
 import { Title, SubTitle } from "../../../shared/ui/common";
 import { BaseButton } from "../../../shared/ui/form/BaseButton";
-// interface IFormInputs {
-//   firstName: string;
-//   lastName: string;
-//   mobile: string;
-//   checked: boolean;
-// }
+import { setCardScreen } from "../../../app/store/reducers/card/cardStore";
+
 interface IProps {
   setPrevCard: (value: number) => void;
 }
-export const CardCreate = (props: IProps ) => {
-  const {setPrevCard} = props;
+export const CardCreate = (props: IProps) => {
+  const { setPrevCard } = props;
   const methods = useForm();
+  const { t } = useTranslation();
 
-
-  const [
-    firstName,
-    lastName,
-    mobile,
-    checked
-  ] = methods.watch([
+  const [firstName, lastName, mobile, checked] = methods.watch([
     "firstName",
     "lastName",
     "mobile",
     "checked"
   ]);
-  console.log({ firstName,
-    lastName,
-    mobile,
-    checked})
+  console.log({ firstName, lastName, mobile, checked });
 
   // const methods = useForm();
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const onSubmit = (data: any) => {
-    setPrevCard(1)
-   console.log({data})
+    setPrevCard(1);
+    dispatch(setCardScreen(1));
+    console.log({ data });
   };
-    return (
-
-
-        <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-      
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
         <div className="main">
-            <WrapperHeader>
+          <WrapperHeader>
+            <WrapperTitle>
+              <Title>{t("card.createAccount")}</Title>
+              <SubTitle>{t("card.alreadyAccount")}</SubTitle>
+            </WrapperTitle>
+            <WrapperInput>
+              <FormInput name={"firstName"} label={t("card.firstName")} />
+              <FormInput name={"lastName"} label={t("card.lastName")} />
+              <FormInput name={"mobile"} label={t("card.mobile")} />
+              <FormInput name={"securityNumber"} label={t("card.securityNumber")} />
+            </WrapperInput>
 
-<WrapperTitle>
-
-      <Title>Create your account</Title>
-      <SubTitle>Already have an account? Sign in</SubTitle>
-</WrapperTitle>
-      <WrapperInput>
-
-
-      <FormInput
-              name={"firstName"}
-              label={"First name"}
-              />
-                 <FormInput
-              name={"lastName"}
-              label={"Last name"}
-            />
-                     <FormInput
-              name={"mobile"}
-              label={"Mobile"}
-            />
-        </WrapperInput>
-
-             <FormCheckbox
-        label={"I’ve read and agreed to the terms of the privacy policy and the offer"}
-        name={"checked"}
-        />
-            </WrapperHeader>
-            <div className="btn">
-
-<BaseButton disabled={ !firstName  ||
-    !lastName ||
-    !mobile  ||
-    !checked} >
-Create account
-</BaseButton>
-            </div>
-    </div>
-        </form>
-      </FormProvider>
-
-   
-    )
-}
+            <FormCheckbox label={t("card.offer")} name={"checked"} />
+          </WrapperHeader>
+          <div className="btn">
+            <BaseButton disabled={!firstName || !lastName || !mobile || !checked}>
+              {t("buttons.create")}
+            </BaseButton>
+          </div>
+        </div>
+      </form>
+    </FormProvider>
+  );
+};
 
 const WrapperInput = styled.div`
-display: flex;
-flex-direction: column;
-gap: 16px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
 const WrapperHeader = styled.div`
-display: flex;
-flex-direction: column;
-gap: 24px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 
 const WrapperTitle = styled.div`
-display: flex;
-flex-direction: column;
-gap: 12px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;

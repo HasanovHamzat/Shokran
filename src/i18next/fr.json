@@ -1,0 +1,55 @@
+{
+  "card" : {
+    "resend" : "Renvoyer",
+    "createAccount" : "Créez votre compte",
+    "alreadyAccount" : "Vous avez déjà un compte ?",
+    "firstName" : "Prénom",
+    "lastName" : "Nom de famille",
+    "mobile" : "Mobile",
+    "securityNumber" : "Numéro de sécurité",
+    "offer" : "J'ai lu et accepté les conditions de la politique de confidentialité et de l'offre",
+    "confirm" : "Confirm",
+    "addCreditCard" : "Ajouter une carte de crédit",
+    "unlinkCard" : "C'est sûr. Vous pouvez modifier les données ou dissocier la carte de votre compte",
+    "cardNumber" : "Numéro de carte",
+    "expirationDate" : "Date d'expiration",
+    "cvc" : "Cvc",
+    "total" : "Total",
+    "item" : "item",
+    "details" : "Détails"
+  },
+  "lang" : {
+  "interfaceLang" : "Modifier la langue"
+  },
+  "buttons":{
+    "create": "Créer un compte",
+    "save": "Enregistrer les données",
+    "home": "Accueil"
+  },
+  "error":{
+    "titleError" : "Quelque chose n'a pas fonctionné",
+    "subTitleError" : "Сheck that there is enough money on card or change the payment plan",
+    "again" : "Try Again"
+  },
+  "pick":{
+    "title" : "Choisissez un plan de paiement",
+    "subTitle" : "Il indique exactement ce que vous allez payer sans frais cachés",
+    "pay" : "Payez",
+    "subTotal" : "Sous-total",
+    "weeks" : "semaines",
+    "mounths" : "mounths",
+    "now" : "Now",
+    "deleted" : "Le montant est débité de votre compte"
+  },
+  "verify":{
+    "title" : "Vérifier le paiement",
+    "subTitle" : "Saisissez le code de vérification unique que nous venons de vous envoyer",
+    "code" : "Code de vérification",
+    "resend" : "Renvoyer",
+    "confirm" : "Confirmer"
+  },
+  "success":{
+    "title" : "Succès",
+    "subTitle" : "Vous pouvez modifier le plan de paiement ou effectuer un remboursement dans votre compte"
+}
+}

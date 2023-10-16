@@ -1,8 +1,7 @@
 import { CheckboxProps } from "@mui/material/Checkbox/Checkbox";
-import  { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { BaseCheckbox } from "./BaseCheckbox";
-
 
 export const FormCheckbox = ({
   name,
@@ -32,7 +31,7 @@ export const FormCheckbox = ({
             label={label}
             onChange={(e) => props.field.onChange(e.target.checked)}
             checked={props.field.value}
-            value={props.field.value  ? props.field.value : false}
+            value={props.field.value ? props.field.value : false}
           />
         )}
       />

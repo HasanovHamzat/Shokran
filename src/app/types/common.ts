@@ -1,11 +1,10 @@
 import { reducers } from "../store/reducers";
 
-
 export type RootStateType = ReturnType<typeof reducers>;
 export interface IInputProps {
   name: string;
   url?: string;
-  label?: string;
+  label?: any;
   formatTime?: string;
   placeholder?: string;
   className?: string;
@@ -18,4 +17,3 @@ export interface IInputProps {
   validateValue?: (el: string) => void;
   InputProps?: any;
 }
-

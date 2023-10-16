@@ -1,0 +1,56 @@
+{
+  "card": {
+    "resend": "Resend",
+    "createAccount": "Create your account",
+    "alreadyAccount": "Already have an account?",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "mobile": "Mobile",
+    "securityNumber": "Security number",
+    "offer": "I’ve read and agreed to the terms of the privacy policy and the offer",
+    "confirm": "Confirm",
+    "addCreditCard":"Add credit card",
+    "unlinkCard":"It's safe. You can change the data or unlink the card in your account",
+    "cardNumber":"Card number",
+    "expirationDate":"Expiration date",
+    "cvc":"Cvc",
+    "total":"Total",
+    "item":"item",
+    "details":"Details"
+  },
+  "lang": {
+  "interfaceLang":"Change language"
+  },
+  "buttons":{
+    "create":"Create account",
+    "save":"Save Data",
+    "home":"Home"
+  },
+  "error":{
+    "titleError": "Something went wrong",
+    "subTitleError": "Сheck that there is enough money on card or change the payment plan",
+    "again": "Try Again"
+  },
+  "pick":{
+    "title":"Pick a payment plan",
+    "subTitle":"It shows exactly what you’ll pay without hidden feesn",
+    "pay":"Pay",
+    "subTotal":"Subtotal",
+    "weeks":"weeks",
+    "mounths":"mounths",
+    "now":"Now",
+    "deleted":"The amount is debited from your account"
+  },
+  "verify":{
+    "title":"Verify the payment",
+    "subTitle":"Enter the one-time verification we just sent to",
+    "code":"Verification Code",
+    "resend":"Resend",
+    "confirm":"Confirm"
+  },
+  "success":{
+    "title":"Success",
+    "subTitle":"You can change the payment plan or make a refund in your account"
+  }
+
+}

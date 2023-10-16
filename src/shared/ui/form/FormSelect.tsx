@@ -6,7 +6,6 @@ import { SelectProps } from "@material-ui/core/Select/Select";
 import { Controller, useFormContext } from "react-hook-form";
 import { IInputProps } from "../../../app/types/common";
 
-
 export const FormSelect = ({
   name,
   label,
@@ -37,16 +36,8 @@ export const FormSelect = ({
             label={label}>
             {options &&
               options?.map((option: any) => (
-                <MenuItem
-                  key={
-                    Math.random().toString(36).substr(2, 9) +
-                    "_" +
-                    ( option.id)
-                  }
-                  value={
-                    option.id
-                  }>
-                  {option.title}
+                <MenuItem key={option.id} value={option.id}>
+                  {option.label}
                 </MenuItem>
               ))}
           </Select>

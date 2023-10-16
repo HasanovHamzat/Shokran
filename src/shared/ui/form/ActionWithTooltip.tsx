@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { InfoOutlined } from "@material-ui/icons";
 import { Tooltip } from "@mui/material";
 import styled from "styled-components";
@@ -10,7 +11,7 @@ interface IProp {
   children?: ReactNode;
 }
 
-export const ActionWithTooltip  = ({ onClick, content, margin = "6px", children }: IProp) => {
+export const ActionWithTooltip = ({ onClick, content, margin = "6px", children }: IProp) => {
   return (
     <Tooltip
       children={

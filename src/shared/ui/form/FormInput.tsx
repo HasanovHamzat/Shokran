@@ -1,7 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
-import TextField, { TextFieldProps }  from "@material-ui/core/TextField";
+import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { IInputProps } from "../../../app/types/common";
-
 
 export const FormInput = ({
   name,
@@ -24,7 +23,7 @@ export const FormInput = ({
             error={!!props.formState.errors[name]}
             helperText={!!props.formState.errors[name] && helperText}
             color={"primary"}
-            value={ props.field.value ? props.field.value : ""}
+            value={props.field.value ? props.field.value : ""}
             onChange={(event) => {
               props.field.onChange(event);
               sideEffect && sideEffect();

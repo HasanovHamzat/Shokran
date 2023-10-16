@@ -1,7 +1,6 @@
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import styled, { css, keyframes } from "styled-components";
-import {cssNormal11, cssNormal16Bold } from "../../app/styles/misxins";
-
+import { cssNormal11, cssNormal16Bold } from "../../app/styles/misxins";
 
 export const InfoOutlinedIconStyle = styled(InfoOutlinedIcon)`
   color: #ff4e3f;
@@ -23,19 +22,19 @@ export const SkeletonCSS = css`
   animation: ${SkeletonAnim} 1.5s infinite;
 `;
 export const Title = styled.h1`
-font-family: Trirong;
-font-size: 24px;
-font-style: normal;
-font-weight: 400;
-line-height: 110%;
+  font-family: Trirong;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
 `;
 export const SubTitle = styled.p`
-font-family: Rubik;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; 
-color: #22212266;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #22212266;
 `;
 export const TitleText = styled.div`
   font-family: "Roboto", sans-serif;

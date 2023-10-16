@@ -4,29 +4,30 @@
 @import "themes/dark";
 
 @font-face {
+  font-weight: 400;
   font-family: Trirong, serif;
   font-style: normal;
-  font-weight: 400;
   src: url("../public/fonts/Trirong/Trirong-Regular400.woff2") format("woff2");
 }
 @font-face {
+  font-weight: 600;
   font-family: Trirong, serif;
   font-style: normal;
-  font-weight: 600;
   src: url("../public/fonts/Trirong/Trirong-SemiBold600.woff2") format("woff2");
 }
 @font-face {
+  font-weight: 400;
   font-family: Rubik, serif;
   font-style: normal;
-  font-weight: 400;
   src: url("../public/fonts/Rubik/Rubik-Regular.woff2") format("woff2");
 }
 @font-face {
+  font-weight: 500;
   font-family: Rubik, serif;
   font-style: normal;
-  font-weight: 500;
   src: url("../public/fonts/Rubik/Rubik-Medium.woff2") format("woff2");
 }
+
 // .app {
 //     font: var(--font-m);
 //     background: var(--bg-color);
@@ -49,16 +50,19 @@
 * {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%
 }
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-style: normal;
 }
+
 .container {
-  width: 90%; 
+  width: 90%;
+  max-width: 1045px; 
   margin: 0 auto;
-  max-width: 1045px;
 }
