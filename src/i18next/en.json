@@ -6,17 +6,21 @@
     "firstName": "First name",
     "lastName": "Last name",
     "mobile": "Mobile",
-    "securityNumber": "Security number",
-    "offer": "I’ve read and agreed to the terms of the privacy policy and the offer",
+    "ssn": "SSN",
+    "agreed": "I’ve read and agreed to the terms of the",
+    "policy": "privacy policy",
+    "and": "and",
+    "offer": "the offer",
     "confirm": "Confirm",
     "addCreditCard":"Add credit card",
-    "unlinkCard":"It's safe. You can change the data or unlink the card in your account",
+    "unlinkCard":"It's safe. You can change the data <break/>  or unlink the card in your account",
     "cardNumber":"Card number",
     "expirationDate":"Expiration date",
-    "cvc":"Cvc",
+    "cvc":"CVC",
     "total":"Total",
     "item":"item",
-    "details":"Details"
+    "details":"Details",
+    "signIn":"Sign in"
   },
   "lang": {
   "interfaceLang":"Change language"
@@ -28,12 +32,15 @@
   },
   "error":{
     "titleError": "Something went wrong",
-    "subTitleError": "Сheck that there is enough money on card or change the payment plan",
-    "again": "Try Again"
+    "subTitleError": "Сheck that there is enough money on the card <break/>  or change the payment plan",
+    "again": "Try Again",
+    "cardNumber": "Card number is invalid",
+    "expiryDate": "Expiry date is invalid",
+    "cvc": "CVC is invalid"
   },
   "pick":{
     "title":"Pick a payment plan",
-    "subTitle":"It shows exactly what you’ll pay without hidden feesn",
+    "subTitle":"It shows exactly what you’ll pay <break/> without hidden feesn",
     "pay":"Pay",
     "subTotal":"Subtotal",
     "weeks":"weeks",
@@ -43,14 +50,16 @@
   },
   "verify":{
     "title":"Verify the payment",
-    "subTitle":"Enter the one-time verification we just sent to",
+    "subTitle":"Enter the one-time verification <break/>  we just sent to",
     "code":"Verification Code",
     "resend":"Resend",
     "confirm":"Confirm"
   },
   "success":{
     "title":"Success",
-    "subTitle":"You can change the payment plan or make a refund in your account"
+    "colour":"Colour",
+    "size":"Size",
+    "subTitle":"You can change the payment plan <break/>  or make a refund in your account"
   }
 
 }

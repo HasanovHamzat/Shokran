@@ -9,6 +9,7 @@ declare module "*.scss" {
 declare module "*.png";
 declare module "*.jpg";
 declare module "react-hook-form";
+declare module "react-credit-cards";
 declare module "react-redux";
 declare module "*.jpeg";
 declare module "*.svg" {

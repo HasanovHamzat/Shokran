@@ -12,7 +12,7 @@ export const BaseCheckbox = ({
   return (
     <div className={"flex items-center"}>
       <ControlLabel
-        control={<Checkbox color={"primary"} className={"!mr-8"} {...props} />}
+        control={<StyledCheckbox color={"primary"} className={"!mr-8"} {...props} />}
         label={label as string}
       />
       {tooltip && <ActionWithTooltip content={tooltip} />}
@@ -21,8 +21,21 @@ export const BaseCheckbox = ({
 };
 const ControlLabel = styled(FormControlLabel)`
   .MuiCheckbox-root {
-    margin-right: 6px !important;
+    display: flex;
+    align-items: flex-start;
+    padding: 0 !important;
+    margin-top: -12px!important;
+    margin-right: 4px !important;
   }
-  margin-right: 0 !important;
+  .css-j204z7-MuiFormControlLabel-root{
+    
+  }
   margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left;
+`;
+const StyledCheckbox = styled(Checkbox)`
+svg{
+  font-size: 20px;
+}
 `;

@@ -394,22 +394,29 @@ a{
 
     .Mui-checked {
       color: #5CB85C !important;
+      margin-right: 20px;
     }
 
     .MuiFormControl-root {
       color: #5CB85C !important;
     }
     .MuiFormControlLabel-label {
-      color: #000000;
-    }
-
-    fieldset &:active {
       
-      //.MuiOutlinedInput-notchedOutline{
-      border-color: #5CB85C !important;
+      color: var(--grey-800, #4E4D4E);
+      font-family: Rubik;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+
     }
 
-  }
-
-
+  .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    z-index: 1;
+    transform: translate(14px, -14px) scale(0.75);
+    pointer-events: none;
+}
+.MuiInputLabel-root {
+  margin-top: 8px;
+}
 `;

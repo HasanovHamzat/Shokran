@@ -4,7 +4,6 @@ import { CardVerify } from "./CardVerify/CardVerify";
 import { CardError } from "./CardError/CardError";
 import { CardSuccess } from "./CardSuccess/CardSuccess";
 import { useState } from "react";
-import { SwitcherLang } from "../SwitcherLang/SwitcherLang";
 import { CardPick } from "./CardPick/CardPick";
 
 export const Cards = () => {
@@ -12,13 +11,13 @@ export const Cards = () => {
   console.log({ prevCard });
   return (
     <>
-    <CardPick  />
-      {/* {prevCard === 0 && <CardCreate setPrevCard={setPrevCard} />}
+    
+      {prevCard === 0 && <CardCreate setPrevCard={setPrevCard} />}
       {prevCard === 1 && <CardAdd setPrevCard={setPrevCard} />}
-      {prevCard === 2 && <CardVerify setPrevCard={setPrevCard} />}
-      {prevCard === 3 && <CardSuccess setPrevCard={setPrevCard} />}
-      {prevCard === 4 && <CardError setPrevCard={setPrevCard} />} */}
-      {/* <SwitcherLang /> */}
+      {prevCard === 2 && <CardPick setPrevCard={setPrevCard} />}
+      {prevCard === 3 && <CardVerify setPrevCard={setPrevCard} />}
+      {prevCard === 4 && <CardSuccess setPrevCard={setPrevCard} />}
+      {prevCard === 5 && <CardError setPrevCard={setPrevCard} />}
     </>
   );
 };

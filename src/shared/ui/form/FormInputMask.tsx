@@ -1,9 +1,10 @@
 import { Controller, useFormContext } from "react-hook-form";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { IInputProps } from "../../../app/types/common";
-import styled from "styled-components";
+import InputMask from "react-input-mask";
 
-export const FormInput = ({
+import styled from "styled-components";
+export const FormInputMask = ({
   name,
   helperText,
   sideEffect,
@@ -13,25 +14,27 @@ export const FormInput = ({
   const { control } = useFormContext();
   return (
     <Controller
-      control={control}
       name={name}
+      control={control}
       render={(props: any) => {
         return (
-          <WhiteBorderTextField
-            InputProps={InputProps}
-            required
-            {...rest}
-            variant="outlined"
-            error={!!props.formState.errors[name]}
-            helperText={!!props.formState.errors[name] && helperText}
-            color={"primary"}
+          <InputMask
+            mask="999-99-9999"
             value={props.field.value ? props.field.value : ""}
-            onChange={(event) => {
-              props.field.onChange(event);
-              sideEffect && sideEffect();
+            onChange={props.field.onChange}>
+            {(inputProps: any) => {
+              return (
+                <WhiteBorderTextField
+                  InputProps={InputProps}
+                  required
+                  {...rest}
+                  variant="outlined"
+                  color={"primary"}
+                  size="small"
+                />
+              );
             }}
-            size="small"
-          />
+          </InputMask>
         );
       }}
     />
@@ -39,15 +42,15 @@ export const FormInput = ({
 };
 const WhiteBorderTextField = styled(TextField)`
   .MuiOutlinedInput-root {
-     padding-top: 0 !important;
-     padding-bottom:  0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     border: 1px solid var(--grey-200, #f3f3f3);
     color: var(--grey-800, #4e4d4e);
     height: 56px;
     border-radius: 12px;
     border: 1px solid var(--grey-200, #f3f3f3);
   }
-  
+
   & label.Mui-focused {
     color: var(--grey-800, #4e4d4e);
   }
@@ -56,4 +59,4 @@ const WhiteBorderTextField = styled(TextField)`
       border: 1px solid var(--grey-200, #f3f3f3);
     }
   }
-  `;
+`;

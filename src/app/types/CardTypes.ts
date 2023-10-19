@@ -37,3 +37,9 @@ export interface IAddCreditCard {
 export interface IVerifyyPayment {
   code: string;
 }
+
+export interface IBankCard {
+  cardNumber: string;
+  expiryDate: string;
+  cvc: string;
+}

@@ -9,5 +9,57 @@
     left: 0;
     z-index: 1;
     width: 100%;
-    padding: 20px 24px;
+    padding: 23px 20px 24px 20px;
 }
+
+
+.css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  .css-checkbox + label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4D4D4D;
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: 27px;
+  }
+  .css-checkbox + label::before {
+    content: " ";
+    margin-right: 13px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #4d4d4d;
+    border-radius: 2px;
+    box-shadow: none;
+  }
+  .css-checkbox:checked + label::after {
+    content: " ";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzMzMjMwIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    left: 1px;
+    top: 3px;
+    text-align: center;
+    background-color: transparent;
+    font-size: 10px;
+    height: 23px;
+    width: 18px;
+  }

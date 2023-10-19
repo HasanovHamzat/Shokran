@@ -6,34 +6,41 @@
     "firstName" : "Prénom",
     "lastName" : "Nom de famille",
     "mobile" : "Mobile",
-    "securityNumber" : "Numéro de sécurité",
-    "offer" : "J'ai lu et accepté les conditions de la politique de confidentialité et de l'offre",
-    "confirm" : "Confirm",
+    "ssn" : "SSN",
+    "agreed" : "J'ai lu et accepté les conditions de la",
+    "policy" : "politique de confidentialité",
+    "and" : "et",
+    "offer" : "offrir",
+    "confirm" : "Confirmer",
     "addCreditCard" : "Ajouter une carte de crédit",
-    "unlinkCard" : "C'est sûr. Vous pouvez modifier les données ou dissocier la carte de votre compte",
+    "unlinkCard" : "C'est sûr. Vous pouvez modifier les données <break/> ou dissocier la carte de votre compte",
     "cardNumber" : "Numéro de carte",
     "expirationDate" : "Date d'expiration",
-    "cvc" : "Cvc",
+    "cvc" : "CVC",
     "total" : "Total",
     "item" : "item",
-    "details" : "Détails"
+    "details" : "Détails",
+    "signIn" : "S'inscrire"
   },
   "lang" : {
-  "interfaceLang" : "Modifier la langue"
+  "interfaceLang" : "Changer de langue"
   },
   "buttons":{
-    "create": "Créer un compte",
-    "save": "Enregistrer les données",
-    "home": "Accueil"
+    "create" : "Créer un compte",
+    "save" : "Enregistrer les données",
+    "home" : "Accueil"
   },
   "error":{
     "titleError" : "Quelque chose n'a pas fonctionné",
-    "subTitleError" : "Сheck that there is enough money on card or change the payment plan",
-    "again" : "Try Again"
+    "subTitleError" : "Сheck that there is enough money on the card <break/> or change the payment plan",
+    "again" : "Try Again",
+    "cardNumber" : "Le numéro de carte n'est pas valide",
+    "expiryDate" : "La date d'expiration n'est pas valide",
+    "cvc" : "CVC est invalide"
   },
   "pick":{
     "title" : "Choisissez un plan de paiement",
-    "subTitle" : "Il indique exactement ce que vous allez payer sans frais cachés",
+    "subTitle" : "Il indique exactement ce que vous allez payer <break/> sans frais cachés",
     "pay" : "Payez",
     "subTotal" : "Sous-total",
     "weeks" : "semaines",
@@ -43,13 +50,15 @@
   },
   "verify":{
     "title" : "Vérifier le paiement",
-    "subTitle" : "Saisissez le code de vérification unique que nous venons de vous envoyer",
+    "subTitle" : "Entrez la vérification unique <break/> que nous venons d'envoyer à",
     "code" : "Code de vérification",
     "resend" : "Renvoyer",
-    "confirm" : "Confirmer"
+    "confirm" : "Confirm"
   },
   "success":{
     "title" : "Succès",
-    "subTitle" : "Vous pouvez modifier le plan de paiement ou effectuer un remboursement dans votre compte"
-}
+    "colour" : "Colour",
+    "size" : "Taille",
+    "subTitle" : "Vous pouvez modifier le plan de paiement <break/> ou effectuer un remboursement dans votre compte"
+  }
 }

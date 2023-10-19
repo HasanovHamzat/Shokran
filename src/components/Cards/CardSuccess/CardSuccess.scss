@@ -1,10 +1,15 @@
-.main{
+.success{
     text-align: center;
 }
-
+.success_wrapper-title{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 .logo{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 48px;
     height: 48px;
     background:  #72C2A9;
@@ -17,11 +22,3 @@
     height: 32px;
 }
 
-.btn{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    padding: 20px 24px;
-}

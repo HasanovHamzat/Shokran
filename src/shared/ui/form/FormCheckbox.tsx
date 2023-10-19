@@ -12,7 +12,7 @@ export const FormCheckbox = ({
   ...rest
 }: {
   name: string;
-  label: string;
+  label: any;
   className?: string;
   tooltip?: string;
   style?: ReactNode;

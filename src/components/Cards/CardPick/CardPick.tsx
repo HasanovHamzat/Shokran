@@ -1,19 +1,24 @@
-import { FormInput } from "../../../shared/ui/form/FormInput";
-import { FormCheckbox } from "../../../shared/ui/form/FormCheckbox";
 import "./CardPick.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled, { css } from "styled-components";
+import { setCardScreen } from "../../../app/store/reducers/card/cardStore";
 
-import { useTranslation } from "react-i18next";
-import { useMemo, useState, useCallback } from "react";
+import { Trans, useTranslation } from "react-i18next";
+import { useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Title, SubTitle } from "../../../shared/ui/common";
 import { BaseButton } from "../../../shared/ui/form/BaseButton";
 import WarningIcon from "../../../shared/assets/icons/Warning.svg";
-import ArrowUpIcon from "../../../shared/assets/icons/arrow-up.svg";
-import ArrowDownIcon from "../../../shared/assets/icons/arrow-down.svg";
-import PriceIcon from "../../../shared/assets/icons/price.svg";
-export const CardPick = () => {
+
+import { StatusCard } from "../ui/StatusCard";
+import { CardBlockText } from "../ui/CardBlockText";
+interface IProps {
+  setPrevCard: (value: number) => void;
+}
+export const CardPick = (props: IProps) => {
+  const { setPrevCard } = props;
+  const dispatch = useDispatch();
+
   const { t } = useTranslation();
   const data = useMemo(
     () => [
@@ -60,24 +65,29 @@ export const CardPick = () => {
   const [page, setPage] = useState<number>(data[0]?.id || 1);
 
   const methods = useForm();
-  const dispatch = useDispatch();
   const onSubmit = (data: any) => {
+    setPrevCard(3);
+    dispatch(setCardScreen(1));
     console.log({ data });
   };
   const handleClickTab = (id: number) => {
     setPage(id);
   };
   const [showDetails, setShowDetails] = useState<boolean>(false);
-  const onShowDetails = useCallback(() => {
-    setShowDetails(!showDetails);
-  }, [showDetails]);
+
   return (
     <FormProvider {...methods}>
+      <StatusCard num={3} />
+
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <div className="main">
           <WrapperHeader>
-            <Title>{t("pick.title")}</Title>
-            <SubTitle>{t("pick.subTitle")}</SubTitle>
+            <div className="pick_wrapper-title">
+              <Title>{t("pick.title")}</Title>
+              <SubTitle>
+                <Trans i18nKey="pick.subTitle" components={{ break: <br /> }} />
+              </SubTitle>
+            </div>
             <Wrapper>
               {data?.map((tab, index) => (
                 <Step
@@ -88,42 +98,36 @@ export const CardPick = () => {
                 </Step>
               ))}
             </Wrapper>
-            <Card>
-              <CardMain show={showDetails}>
-                <div className="card_title">
-                  <img src={PriceIcon} alt="Icon: PriceIcon" /> <span>$2,040.08/week</span>
-                </div>
-                <div onClick={onShowDetails}>
-                  <span className="details">{t("card.details")}</span>
-                  {showDetails ? (
-                    <img src={ArrowUpIcon} alt="Icon: ArrowUpIcon" />
-                    ) : (
-                    <img src={ArrowDownIcon} alt="Icon: ArrowDownIcon" />
-                  )}
-                </div>
-              </CardMain>
-              {showDetails && (
-                <>
-                  {product?.map((el: any) => (
-                    <WrapperCenter key={el.id}  className="card_items">
-                      <div>
-                        <span className="card_subtitle">{el.label}</span>
-                      </div>
-                      <div>
-                        <span className="card_subtitle">{el.date}</span>
-                      </div>
-                    </WrapperCenter>
-                  ))}
-                </>
-              )}
-            </Card>
+            <CardBlockText
+              priceIcon={true}
+              details={true}
+              leftText={"$2,040.08/week"}
+              showDetails={showDetails}
+              setShowDetails={setShowDetails}
+              options={product}
+            />
           </WrapperHeader>
-          <WrapperCenter>
+          <div className="pick_wrapper-amount">
             <img src={WarningIcon} alt="Icon: WarningIcon" />
             <p className="amount">{t("pick.deleted")}</p>
-          </WrapperCenter>
+          </div>
+          <div className="pick_wrapper-total">
+            <div className="pick_wrapper-total__sub">
+              <p className="pick_wrapper-total__sub-title">
+                {t("pick.subTotal")} &nbsp;
+                <span className="pick_wrapper-total__sub-title_item">
+                  (1&nbsp;{t("card.item")})
+                </span>
+              </p>
+              <p>$8,160.32</p>
+            </div>
+            <div className="pick_wrapper-total__main">
+              <p className="pick_wrapper-total__main-title">{t("card.total")}</p>
+              <p>$2,040.08</p>
+            </div>
+          </div>
           <div className="btn">
-            {/* <BaseButton>{t("pick.pay")}</BaseButton> */}
+            <BaseButton>{t("pick.pay")}&nbsp; $2,040.08</BaseButton>
           </div>
         </div>
       </form>
@@ -131,35 +135,12 @@ export const CardPick = () => {
   );
 };
 
-const WrapperInput = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-`;
 const WrapperHeader = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
 `;
-const WrapperCenter = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-const Card = styled.div`
-  padding: 12px;
-margin-bottom: 12px;
 
-  border-radius: 12px;
-  border: 1px solid var(--grey-200, #f3f3f3);
-  background: var(--White, #fff);
-`;
-const CardMain = styled.div<{ show: boolean }>`
-margin-bottom: ${({ show }) => (show ? "12px" : "0px")};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
 const Step = styled.div<{ active: boolean }>`
   display: flex;
   width: 107px;

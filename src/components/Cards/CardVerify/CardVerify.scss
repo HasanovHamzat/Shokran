@@ -3,11 +3,9 @@
 }
 
 
-.btn{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    padding: 20px 24px;
+
+.verify_wrapper-title{
+    display: flex;
+    flex-direction:column;
+    gap: 12px;
 }

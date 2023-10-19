@@ -36,6 +36,23 @@ export const SubTitle = styled.p`
   line-height: 140%;
   color: #22212266;
 `;
+export const SignInTitle = styled.p`
+color: #21A179;
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%;
+`;
+
+export const Offer = styled.a`
+color: var(--green-500, #209C75);
+font-family: Rubik;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%;
+`;
 export const TitleText = styled.div`
   font-family: "Roboto", sans-serif;
   font-weight: 700;
