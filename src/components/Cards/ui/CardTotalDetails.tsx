@@ -115,7 +115,8 @@ const Total = styled.p`
     "clig" off,
     "liga" off;
   /* Body 17/Medium */
-  font-family: Rubik;
+  font-family:  "Rubik", sans-serif;
+
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
@@ -123,7 +124,8 @@ const Total = styled.p`
 `;
 const ProductTitle = styled.p`
   color: var(--Black, #222122);
-  font-family: Rubik;
+  font-family:  "Rubik", sans-serif;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -135,7 +137,8 @@ const ProductDecr = styled.p`
     "clig" off,
     "liga" off;
   /* Caption/Help text */
-  font-family: Rubik;
+  font-family:  "Rubik", sans-serif;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -148,7 +151,8 @@ const Details = styled.p`
     "clig" off,
     "liga" off;
   /* Button/Extra Small */
-  font-family: Rubik;
+  font-family:  "Rubik", sans-serif;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 500;

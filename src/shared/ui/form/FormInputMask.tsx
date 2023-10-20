@@ -6,6 +6,7 @@ import InputMask from "react-input-mask";
 import styled from "styled-components";
 export const FormInputMask = ({
   name,
+  mask,
   helperText,
   sideEffect,
   InputProps,
@@ -19,7 +20,7 @@ export const FormInputMask = ({
       render={(props: any) => {
         return (
           <InputMask
-            mask="999-99-9999"
+            mask={mask}
             value={props.field.value ? props.field.value : ""}
             onChange={props.field.onChange}>
             {(inputProps: any) => {

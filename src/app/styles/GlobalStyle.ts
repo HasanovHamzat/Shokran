@@ -390,7 +390,6 @@ a{
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
 
     .Mui-checked {
       color: #5CB85C !important;
@@ -403,7 +402,7 @@ a{
     .MuiFormControlLabel-label {
       
       color: var(--grey-800, #4E4D4E);
-      font-family: Rubik;
+      font-family: "Rubik", sans-serif;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;

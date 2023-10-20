@@ -11,7 +11,6 @@ export const SwitcherLang = () => {
   const methods = useForm();
 
   const [language] = methods.watch(["language"]);
-  console.log({ language });
   useEffect(() => {
     i18n.changeLanguage(language);
   }, [language]);

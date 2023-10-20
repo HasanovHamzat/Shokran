@@ -19,7 +19,7 @@ export const CardError = (props: IProps) => {
   const onSubmit = (data: any) => {
     setPrevCard(6);
 
-    console.log({ data });
+    // console.log({ data });
   };
   const reloadPage = () => {
     // eslint-disable-next-line no-restricted-globals
@@ -36,8 +36,8 @@ export const CardError = (props: IProps) => {
             </div>
             <div className="error_wrapper-title">
               <Title>{t("error.titleError")}</Title>
-              <SubTitle>
-                <Trans i18nKey="error.subTitleError" components={{ break: <br /> }} />
+              <SubTitle>{t("error.subTitleError" )}
+                {/* <Trans i18nKey="error.subTitleError" components={{ break: <br /> }} /> */}
               </SubTitle>
             </div>
           </WrapperHeader>

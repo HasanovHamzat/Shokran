@@ -32,7 +32,7 @@
   },
   "error":{
     "titleError": "Something went wrong",
-    "subTitleError": "Сheck that there is enough money on the card <break/>  or change the payment plan",
+    "subTitleError": "Сheck that there is enough money on the card or change the payment plan",
     "again": "Try Again",
     "cardNumber": "Card number is invalid",
     "expiryDate": "Expiry date is invalid",

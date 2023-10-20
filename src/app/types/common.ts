@@ -6,6 +6,7 @@ export interface IInputProps {
   name: string;
   url?: string;
   label?: any;
+  mask?: string;
   formatTime?: string;
   placeholder?: string;
   className?: string;

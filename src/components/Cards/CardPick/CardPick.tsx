@@ -12,6 +12,7 @@ import WarningIcon from "../../../shared/assets/icons/Warning.svg";
 
 import { StatusCard } from "../ui/StatusCard";
 import { CardBlockText } from "../ui/CardBlockText";
+import { cssNormal14 } from "../../../app/styles/misxins";
 interface IProps {
   setPrevCard: (value: number) => void;
 }
@@ -68,7 +69,7 @@ export const CardPick = (props: IProps) => {
   const onSubmit = (data: any) => {
     setPrevCard(3);
     dispatch(setCardScreen(1));
-    console.log({ data });
+    // console.log({ data });
   };
   const handleClickTab = (id: number) => {
     setPage(id);
@@ -142,17 +143,14 @@ const WrapperHeader = styled.div`
 `;
 
 const Step = styled.div<{ active: boolean }>`
+${cssNormal14};
   display: flex;
   width: 107px;
   align-items: center;
   justify-content: center;
   padding: 8px 16px;
   border-radius: 12px;
-  font-family: Rubik;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+
   color:  #4E4D4E
   margin-right: 5px;
   transition: color 0.3s;

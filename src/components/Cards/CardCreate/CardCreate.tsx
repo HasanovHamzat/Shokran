@@ -7,9 +7,11 @@ import { useTranslation } from "react-i18next";
 import { FormProvider, useForm } from "react-hook-form";
 import { Title, SubTitle, SignInTitle, Offer } from "../../../shared/ui/common";
 import { BaseButton } from "../../../shared/ui/form/BaseButton";
-import { setCardScreen } from "../../../app/store/reducers/card/cardStore";
+import { setCardScreen, setCardCreate } from "../../../app/store/reducers/card/cardStore";
 import { StatusCard } from "../ui/StatusCard";
 import { FormInputMask } from "../../../shared/ui/form/FormInputMask";
+import { InputMobile } from "../../Format/InputMobile/InputMobile";
+import CanadaFlag from "../../../shared/assets/flags/canada.svg";
 interface IProps {
   setPrevCard: (value: number) => void;
 }
@@ -18,20 +20,29 @@ export const CardCreate = (props: IProps) => {
   const methods = useForm();
   const { t } = useTranslation();
 
-  const [firstName, lastName, mobile, checked] = methods.watch([
+  const [firstName, lastName, mobile, ssn, offer] = methods.watch([
     "firstName",
     "lastName",
     "mobile",
-    "checked"
+    "ssn",
+    "offer"
   ]);
-  console.log({ firstName, lastName, mobile, checked });
 
   const dispatch = useDispatch();
   const onSubmit = (data: any) => {
     setPrevCard(1);
     dispatch(setCardScreen(1));
-    console.log({ data });
+    dispatch(setCardCreate(data));
   };
+
+  console.log(mobile?.length, ssn?.length)
+  console.log({mobile, ssn})
+
+  const disableMobile = mobile?.replace(/\D+/g, "").length !== 11;
+
+
+  const disableSSN = ssn?.replace(/\D+/g, "").length !== 9;
+console.log({disableMobile, disableSSN})
   return (
     <FormProvider {...methods}>
       <StatusCard num={1} />
@@ -46,11 +57,19 @@ export const CardCreate = (props: IProps) => {
               </WrapperSignIn>
             </WrapperTitle>
             <WrapperInput>
-              <FormInput name={"firstName"} label={t("card.firstName")} />
-              <FormInput name={"lastName"} label={t("card.lastName")} />
-              <FormInput name={"mobile"} label={t("card.mobile")} />
-              <FormInputMask name={"ssn"} label={t("card.ssn")} />
-              
+              <FormInput type="text" name={"firstName"} label={t("card.firstName")} />
+              <FormInput type="text" name={"lastName"} label={t("card.lastName")} />
+              <FormInputMask name={"ssn"} label={t("card.ssn")} mask={"999-99-9999"} />
+              <FormInputMask
+                // InputProps={{
+                //   startAdornment: (
+                //       <Flag alt="Flag" src={CanadaFlag} />
+                //   )
+                // }}
+                name={"mobile"}
+                label={t("card.mobile")}
+                mask={"+1 (999) 999-9999"}
+              />
             </WrapperInput>
 
             <FormCheckbox
@@ -62,22 +81,30 @@ export const CardCreate = (props: IProps) => {
                   <Offer> {t("card.offer")}</Offer>
                 </>
               }
-              name={"checked"}
+              name={"offer"}
             />
           </WrapperHeader>
+
           <div className="btn">
-            <BaseButton disabled={!firstName || !lastName || !mobile || !checked}>
+            <BaseButton disabled={!firstName || !lastName || disableSSN || disableMobile || !offer}>
               {t("buttons.create")}
             </BaseButton>
           </div>
         </div>
-        {/* <InputMobile /> */}
-
       </form>
     </FormProvider>
   );
 };
+const Flag = styled.img`
+  width: 20px;
+  margin-right: 15px;
+`;
 
+const Mobile = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
 const WrapperInput = styled.div`
   display: flex;
   flex-direction: column;

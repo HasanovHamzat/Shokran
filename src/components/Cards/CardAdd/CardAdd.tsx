@@ -20,7 +20,6 @@ export const CardAdd = (props: IProps) => {
   const { t } = useTranslation();
 
   const { cardScreen } = useSelector((state: RootStateType) => state.cardSlice);
-  console.log({ cardScreen });
 
   const { setPrevCard } = props;
   const methods = useForm();
@@ -29,13 +28,33 @@ export const CardAdd = (props: IProps) => {
     expiryDate: "",
     cvc: ""
   });
-
+  const [cardstateError, setcardStateError] = useState({
+    cardNumber: "",
+    expiryDate: "",
+    cvc: ""
+  });
   const onSubmit = (data: any) => {
-    setPrevCard(2);
+    setPrevCard(3);
     dispatch(setCardScreen(2));
-    console.log({ cardstate });
   };
-
+  const disableBtn: boolean =
+    !cardstate.cardNumber ||
+    !cardstate.expiryDate ||
+    !cardstate.cvc ||
+    cardstate.cardNumber.length !== 19 ||
+    cardstate.expiryDate.length !== 7 ||
+    cardstate.cvc.length !== 3 ||
+    Boolean(cardstateError?.cardNumber) ||
+    Boolean(cardstateError?.expiryDate) ||
+    Boolean(cardstateError?.cvc);
+  console.log(
+    "cardNumber",
+    cardstate.cardNumber.length,
+    "expiryDate",
+    cardstate.expiryDate.length,
+    "cvc",
+    cardstate.cvc.length
+  );
   return (
     <FormProvider {...methods}>
       <StatusCard num={2} />
@@ -49,11 +68,14 @@ export const CardAdd = (props: IProps) => {
               </SubTitle>
             </WrapperTitle>
           </WrapperHeader>
-          <CreditCard cardstate={cardstate} setcardState={setcardState} />
+          <CreditCard
+            cardstateError={cardstateError}
+            setcardStateError={setcardStateError}
+            cardstate={cardstate}
+            setcardState={setcardState}
+          />
           <div className="btn">
-            <BaseButton disabled={!cardstate.cardNumber || !cardstate.expiryDate || !cardstate.cvc}>
-              {t("buttons.save")}
-            </BaseButton>
+            <BaseButton disabled={disableBtn}>{t("buttons.save")}</BaseButton>
           </div>
         </div>
       </form>

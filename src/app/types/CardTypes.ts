@@ -7,17 +7,12 @@ export interface ICardResponse {
 }
 
 export interface ICard {
-  content: ReactNode;
   id: number;
-  name: string;
-  type: string;
-  popupType: string;
-  position: string;
-  publisherId: number;
-  skinId: number;
-  userRole: number;
-  windowHeight: string;
-  windowWidth: string;
+  firstname: string;
+  lastname: string;
+  mobile: string;
+  ssn: number;
+  offer: boolean;
 }
 
 export interface ICardCreate {

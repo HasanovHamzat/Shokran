@@ -2,13 +2,20 @@ import { useCreditCardValidator, images } from "react-creditcard-validator";
 import "./style.scss";
 import { useTranslation } from "react-i18next";
 import { IBankCard } from "../../../app/types/CardTypes";
+import { useEffect } from "react";
 
 interface IProps {
   cardstate: IBankCard;
   setcardState: (el: IBankCard) => void;
+  cardstateError:any;
+   setcardStateError:any;
 }
 export const CreditCard = (props: IProps) => {
-  const { cardstate, setcardState } = props;
+  const { cardstate, setcardState, 
+  
+    cardstateError,
+   setcardStateError
+  } = props;
   const { t } = useTranslation();
 
   function expDateValidate(_: unknown, year: string) {
@@ -26,6 +33,11 @@ export const CreditCard = (props: IProps) => {
     meta: { erroredInputs }
   } = useCreditCardValidator({ expiryDateValidator: expDateValidate });
   console.log({ erroredInputs });
+
+
+  useEffect(() => {
+    setcardStateError(erroredInputs)
+  }, [erroredInputs])
   return (
     <main>
       <div className="wrapper-group">
@@ -69,6 +81,7 @@ export const CreditCard = (props: IProps) => {
                   [e.target.name]: e.target.value
                 })
             })}
+            type="password"
             placeholder={t("card.cvc") as string}
           />
         </div>

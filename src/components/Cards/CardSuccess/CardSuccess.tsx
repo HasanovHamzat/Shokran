@@ -32,14 +32,14 @@ export const CardSuccess = (props: IProps) => {
       size: 35,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA1c9IrhsZlYck8MZSuRDZxLEus2tO6T_2lA&usqp=CAU"
     },
-    {
-      id: 2,
-      price: 5322,
-      label: "Nike",
-      color: "blue",
-      size: 31,
-      img: "https://cdn.urbanvibes.com/upload/mdm/media_content/resize/e67/1000_1000_354e/83678160299.jpg"
-    },
+    // {
+    //   id: 2,
+    //   price: 5322,
+    //   label: "Nike",
+    //   color: "blue",
+    //   size: 31,
+    //   img: "https://cdn.urbanvibes.com/upload/mdm/media_content/resize/e67/1000_1000_354e/83678160299.jpg"
+    // },
     // {
     //   id: 3,
     //   price: 245300,
@@ -63,13 +63,13 @@ export const CardSuccess = (props: IProps) => {
                 <Trans i18nKey="success.subTitle" components={{ break: <br /> }} />
               </SubTitle>
             </div>
-          </WrapperHeader>
           <WrapperCard>
             <CardTotalDetails product={product} />
             <CardBlockText leftText={t("card.cardNumber")} rightText={"**56"} />
             <CardBlockText priceIcon leftText={"$2,040.08/week"} rightText={"3 weeks"} />
           </WrapperCard>
 
+          </WrapperHeader>
           <div className="btn">
             <BaseButton>{t("buttons.home")}</BaseButton>
           </div>
@@ -81,8 +81,6 @@ export const CardSuccess = (props: IProps) => {
 
 const WrapperHeader = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 24px;
 `;

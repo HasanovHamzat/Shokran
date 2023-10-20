@@ -9,8 +9,8 @@ export const cssResetStyles = css`
   margin: 0;
   padding: 0;
   text-transform: none;
-  font-family: "Roboto", sans-serif;
-`;
+  font-family:  "Rubik", sans-serif;
+  `;
 
 export const CSSShadow = css`
   box-shadow:
@@ -23,23 +23,43 @@ export const CSSTransition = css`
   transition: all 0.2s ease-in-out;
 `;
 
+export const cssNormal24 = css`
+  ${cssResetStyles};
+  font-weight: 400;
+  font-size: 24px;
+`;
+export const cssNormal12 = css`
+  ${cssResetStyles};
+  font-weight: 400;
+  font-size: 12px;
+line-height: 140%;
+
+`;
 export const cssNormal14 = css`
   ${cssResetStyles};
   font-weight: 400;
   font-size: 14px;
-`;
-export const cssNormal11 = css`
-  ${cssResetStyles};
-  font-weight: 400;
-  font-size: 11px;
-`;
+line-height: 140%;
 
-export const cssNormal14Bold = css`
+`;
+export const cssNormal17Bold500 = css`
   ${cssResetStyles};
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+`;
+export const cssNormal14Bold500 = css`
+  ${cssResetStyles};
+  font-weight: 500;
   font-size: 14px;
 `;
+export const cssNormal12Bold500 = css`
+  ${cssResetStyles};
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
 
+`;
 export const cssNormal16Bold = css`
   ${cssResetStyles};
   font-weight: 700;

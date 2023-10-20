@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 import "./header.scss";
 export const Header = () => {
-  const [i18n] = useTranslation();
+  const [t, i18n] = useTranslation();
   const language = useMemo(
     () => [
       {
